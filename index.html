@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="front_end/styles.css" />
+    <title>Pulsar Detection</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo">
+          <a href="front_end/index.html">
+            <img src="assets/4.png" alt="Logo" />
+          </a>
+          <a href="https://www.isro.gov.in/">
+            <img src="assets/5.png" alt="Logo" style="width: 90px;" />
+          </a>
+        </div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="front_end/index.html">Home</a></li>
+          <li><a href="front_end/detect.html">Detect</a></li>
+          <li><a href="front_end/about.html">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <h1 class="title">
+            <span>Pulsar</span> Detection
+          </h1>
+          <p class="description" style="font-size: 25px; margin-bottom: 10px;">
+             Multi-Model Machine Learning Architecture for Automated Pulsar Detection
+          </p>
+          <p class="description" style="color: white;">Easy to use Interface for Detecting Pulsars with the overall <b>Accuracy of <a style="color: #ff9001;">97.8%</a></b> and <b>Recall of <a style="color: #ff9001;">95.3%</a></b></p>
+          <a href = "#" style="margin-top: -20px; color: #ff9001;">Read More</a>
+        </div>
+        <div class="image">
+          <img src="assets/2.jpeg" alt="Pulsar" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section2">
+      <div class="section__container">
+        <div class="image">
+          <img src="assets/6.jpeg" alt="Pulsar" style="width: 500px;" />
+        </div>
+        <div class="content">
+          <h1 class="title">
+            What is a <span>Pulsar</span>
+          </h1>
+          <p class="description">
+            Pulsars are rapidly rotating neutron stars that blast out pulses of radiation at regular intervals ranging from seconds to milliseconds. 
+          </p>
+          <a href="https://en.wikipedia.org/wiki/Pulsar" style="margin-top: -25px; margin-bottom: 10px; color: rgb(60, 60, 185);">Read More about Pulsars</a>
+          <h1 class="title">
+            How are <span>WE </span>Detecting It
+          </h1>
+          <p class="description">
+            We aggregated numerical and image data from .phcx files utilizing PDMP and PEASOUP. Numerical attributes, such as signal-to-noise ratio and dispersion measure, are processed through an Artificial Neural Network (ANN), while image data—representing visualizations of pulsar signals—is fed into a Convolutional Neural Network (CNN). The ANN leverages features like Profile_mean and DM_skewness to generate probabilistic scores, while the CNN extracts spatial hierarchies from the image channels. These probabilistic outputs are then ensembled, synthesizing a comprehensive inference model that enhances the robustness and accuracy of pulsar detection by integrating both numerical and visual modalities to acquire Multi-Model Prowess.
+          </p>
+          <a href="front_end/detect.html" style="margin-top: -25px; margin-bottom: 10px; color: rgb(60, 60, 185);">Detect Pulsars Now</a>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer__content">
+        <p>&copy; 2024 SSD. All rights reserved.</p>
+        <ul>
+          <li><a href="#" style="color: rgb(60, 60, 185);">Our Research Work</a></li>
+        </ul>
+      </div>
+    </footer>    
+
+  </body>
+</html>
