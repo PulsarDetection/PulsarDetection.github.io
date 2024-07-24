@@ -162,7 +162,8 @@ ul li a:hover {
 .description {
   line-height: 1.5rem;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: -35px;
+  margin-top: -15px;
 }
 
 section .section__container .content li{
@@ -451,4 +452,42 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 #output li {
   margin-bottom: 10px;
+}
+
+#loadingGif {
+  width: 15px; /* Adjust size as needed */
+  height: 15px; /* Adjust size as needed */
+  display: none;
+  margin-left: 10px;
+}
+
+#output {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.out-img,
+.out-txt,
+.output-details {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 751px) {
+  .output-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .output-wrapper > div {
+    flex: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .output-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

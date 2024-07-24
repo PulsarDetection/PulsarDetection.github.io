@@ -417,3 +417,17 @@ input[type="number"]::-webkit-inner-spin-button {
   color: red;
   font-weight: bold;
 }
+
+button[type="submit"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  display: none;
+  margin-left: 10px;
+}

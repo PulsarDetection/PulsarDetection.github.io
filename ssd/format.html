@@ -61,7 +61,7 @@
           <p class="description">
             <b style="color: #ff9001;">Cited:</b> <a href="https://astronomy.swin.edu.au/~vmorello/" class="link" style="color: 
             #ff9001;">https://astronomy.swin.edu.au/~vmorello/</a><br>
-            Format of .phcx file: <a href="#" style="color: #d2a16f;">Download a Example Format</a>
+            Format of .phcx file: <a href="assets/phcx-files.zip" style="color: #d2a16f;">Download a Example Format</a>
           </p>
         </div>
         <div class="image">
@@ -73,7 +73,10 @@
                     <input type="file" id="fileUpload" accept=".phcx*" style="display: none;" required>
                 </div>
                 <div class="form-group">
-                  <button type="submit" id="uploadButton">Submit</button>
+                  <button type="submit" id="uploadButton">
+                    Submit
+                    <img id="loading" src="assets/loading.gif" alt="Loading..." style="display: none; margin-left: 10px;" />
+                  </button>
                   <p id="errorMessage" class="error-message" style="display:none;">Please upload an image first.</p>
                 </div>
             </form>
@@ -85,9 +88,9 @@
     <section class="section2" id="section2" style="display: none;">
       <div class="section__container">
         <div class="content">
-          <h1 class="title"><span>Converted Data</span></h1>
+          <h1 class="title" style="margin-bottom: -10px;"><span>Converted Data</span></h1>
           <div id="output"></div><br>
-          <h1 class="title"><span>Output</span></h1>
+          <h1 class="title" style="margin-bottom: -10px;"><span>Prediction</span></h1>
           <div id="output1"></div>
         </div>
       </div>

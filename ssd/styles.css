@@ -7,7 +7,7 @@
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --extra-light: #faf5ff;
-  --max-width: 1400px;
+  --max-width: 100%;
 }
 
 * {
@@ -22,7 +22,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #000000;
+  background-color: #000000; 
 }
 
 nav {
@@ -282,7 +282,7 @@ section .section__container .content a{
 /* Footer Styles */
 footer {
   width: 100%;
-  height: 70px; /* Same height as the navbar */
+  height: 50px; /* Same height as the navbar */
   background-color: #000000; /* Same background color as the navbar */
   color: white;
   display: flex;

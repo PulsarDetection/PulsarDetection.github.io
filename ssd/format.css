@@ -425,3 +425,50 @@ input[type="number"]::-webkit-inner-spin-button {
   color: red;
   font-weight: bold;
 }
+
+button[type="submit"] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  display: none;
+  margin-left: 10px;
+}
+
+#output {
+  display: grid;
+  align-items: center; 
+  grid-template-columns: 1fr 1fr;
+ }
+
+ @media (max-width: 750px) {
+  #output {
+    grid-template-columns: 1fr;
+  }
+}
+
+.button-style {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.2rem;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #ff9001;
+  color: black;
+  border: 2px solid #ff9001;
+  border-radius: 10px;
+}
+
+.button-style:hover {
+  background-color: white;
+  color: #ff9001;
+  border: 2px solid white;
+  border-radius: 10px;
+}

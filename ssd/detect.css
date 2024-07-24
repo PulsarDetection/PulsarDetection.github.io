@@ -250,7 +250,7 @@ ul li a:hover {
 /* Footer Styles */
 footer {
   width: 100%;
-  height: 70px; /* Same height as the navbar */
+  height: 50px; /* Same height as the navbar */
   background-color: #000000; /* Same background color as the navbar */
   color: white;
   display: flex;

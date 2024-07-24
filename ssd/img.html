@@ -56,6 +56,7 @@
             Input data format is similar as HTRU1 Dataset<br>
             <b style="color: #ff9001;">Cited:</b> <a href="https://as595.github.io/HTRU1/" class="link" style="color: 
             #ff9001;">https://as595.github.io/HTRU1/</a>
+            <br>Example Images: <a href="assets/images.zip" style="color: #d2a16f;">Click Here</a>
           </p>
         </div>
         <div class="image">
@@ -63,13 +64,16 @@
             <h2>Upload Image</h2>
             <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
               <div class="upload-container" id="uploadContainer">
-                <p>Drag and drop a image here, <br>or click here to upload</p>
+                <p>Drag and drop an image here, <br>or click here to upload</p>
                 <input type="file" id="imageUpload" accept="image/*" style="display: none;" required>
               </div>
               <div class="form-group">
-                <button type="submit" id="uploadButton">Submit</button>
+                <button type="submit" id="submitButton">
+                  Submit
+                  <img id="loading" src="assets/loading.gif" alt="Loading..." style="display: none; margin-left: 10px;" />
+                </button>
                 <p id="errorMessage" class="error-message" style="display:none;">Please upload an image first.</p>
-              </div>
+              </div>  
             </form>
           </div>
         </div>
@@ -78,7 +82,7 @@
     <section class="section2" id="section2" style="display: none;">
       <div class="section__container">
         <div class="content">
-          <h1 class="title"><span>Output</span></h1>
+          <h1 class="title"><span>Prediction</span></h1>
           <div id="output"></div>
         </div>
       </div>
