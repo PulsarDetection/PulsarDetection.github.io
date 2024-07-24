@@ -17,7 +17,7 @@ class SimpleCNN(nn.Module):
         x = torch.max_pool2d(x, 2)
         x = x.view(-1, 64 * 8 * 8)
         x = torch.relu(self.fc1(x))
-        x = torch.sigmoid(self.fc2(x))
+        x = self.fc2(x)
         return x
 
 model = SimpleCNN()  # Define the model architecture
