@@ -123,12 +123,12 @@ submitButton.addEventListener('click', () => {
           </div>
         </div>
         <div class="output-details">
-          <h2 style="font-size: 1.7em;">Output:</h2>
-          <p style="font-size: 1.3em;">Prediction: <b style="color: #ff9001">${predictionMessage}</b></p>
-          <p style="font-size: 1.3em;">Probability: <b style="color: #ff9001">${probability}</b></p>
           <h2 style="font-size: 1.3em; padding-top:10px">Individual Predictions:</h2>
           <p style="font-size: 1em;">Prediction from Numerical Values: <b style="color: #ff9001">${annpredictionMessage}</b> (Probability: <b style="color: #ff9001">${annprobability}</b>)</p>
           <p style="font-size: 1em;">Prediction from Image: <b style="color: #ff9001">${cnnpredictionMessage}</b> (Probability: <b style="color: #ff9001">${cnnprobability}</b>)</p>
+          <h2 style="font-size: 1.7em;">Output:</h2>
+          <p style="font-size: 1.3em;">Prediction: <b style="color: #ff9001">${predictionMessage}</b></p>
+          <p style="font-size: 1.3em;">Probability: <b style="color: #ff9001">${probability}</b></p>
         </div>
         `;
 

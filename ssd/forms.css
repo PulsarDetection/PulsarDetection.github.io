@@ -111,6 +111,7 @@ ul li a:hover {
 
 .section {
   background-color: #000;
+  padding-top: 50px; /* Adjust according to the navbar height */
 }
 
 .section__container {
@@ -430,4 +431,30 @@ button[type="submit"] {
   height: 20px; /* Adjust size as needed */
   display: none;
   margin-left: 10px;
+}
+
+
+/* Add this CSS to your existing styles.css */
+
+.title-logo {
+  display: flex;
+  align-items: center;
+}
+
+.title-logo-img {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Adjust space between logo and title */
+}
+
+@media (max-width: 750px) {
+  .title-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-logo-img {
+    margin-right: 0;
+    margin-bottom: 10px; /* Adjust space between logo and title */
+  }
 }
