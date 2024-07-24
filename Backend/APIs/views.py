@@ -19,6 +19,7 @@ def cnn_predict(request):
 @api_view(['POST'])
 def ann_predict(request):
     model_path = os.path.join('models', 'ann.onnx')  # ONNX model path
+    scaler_path = os.path.join('models', 'std_scaler.bin')
     # print("Request",request)
     print("Request Data",request.data)
     data = request.data['data']
@@ -28,7 +29,7 @@ def ann_predict(request):
     ort_session = ANN_ONNX.load_model(model_path)
 
     # Perform prediction
-    output, probability = ANN_ONNX.predict(ort_session, data)
+    output, probability = ANN_ONNX.predict(ort_session, data,scaler_path)
 
     return Response({'prediction': int(output), 'probability': float(probability)})
 
@@ -40,15 +41,16 @@ def merged_predict(request):
         ann_data = json.loads(ann_data)
     except (KeyError, TypeError, ValueError):
         return Response({'error': 'Invalid ann_data'}, status=400)
-    
+
     ann_data = np.array(ann_data).astype(np.float32)
     image_data = request.FILES['image'].read()
 
+    scaler_path = os.path.join('models', 'std_scaler.bin')
     ann_model_path = os.path.join('models', 'ann.onnx')
     cnn_model_path = os.path.join('models', 'cnn.onnx')
 
     ann_model = ANN_ONNX.load_model(ann_model_path)
-    ann_output, ann_prob = ANN_ONNX.predict(ann_model, ann_data)
+    ann_output, ann_prob = ANN_ONNX.predict(ann_model, ann_data,scaler_path)
 
     cnn_model = CNN_ONNX.load_model(cnn_model_path)
     cnn_output, cnn_prob = CNN_ONNX.predict_image(cnn_model, image_data)
@@ -67,7 +69,7 @@ def merged_predict(request):
 @api_view(['POST'])
 def phcx_predict(request):
     phcx_file = request.FILES['file']
-    temporary_dir = os.path.join('temporary')
+    temporary_dir = os.path.join('pulsar-detection','Backend','temporary')
     temp_phcx_file_path = os.path.join(temporary_dir, 'temporary.phcx')
     with open(temp_phcx_file_path, 'wb') as temp_phcx_file:
         for chunk in phcx_file.chunks():
@@ -76,17 +78,19 @@ def phcx_predict(request):
 
     # csv_file_path = os.path.join(temporary_dir, 'output.csv')
     try:
-        ann_data_df = pd.read_csv('temporary/output.csv',header=None)
+        ann_data_df = pd.read_csv('pulsar-detection/Backend/temporary/output.csv',header=None)
         ann_data = ann_data_df.values.astype(np.float32)
         # print("ANN_DATA",ann_data)
     except Exception as e:
         return Response({'error': f'Error reading CSV file: {str(e)}'}, status=400)
 
+    scaler_path = os.path.join('models', 'std_scaler.bin')
     ann_model_path = os.path.join('models', 'ann.onnx')
     cnn_model_path = os.path.join('models', 'cnn.onnx')
+    print("path: ",ann_model_path,"CNN: ",cnn_model_path)
 
     ann_model = ANN_ONNX.load_model(ann_model_path)
-    ann_output, ann_prob = ANN_ONNX.predict(ann_model, ann_data)
+    ann_output, ann_prob = ANN_ONNX.predict(ann_model, ann_data,scaler_path)
 
     image_file_path = phcx_to_image.process_file(os.path.join(temporary_dir, 'temporary.phcx'))
     image_data = open(image_file_path, 'rb').read()
